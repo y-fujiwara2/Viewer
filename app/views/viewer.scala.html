@@ -1,0 +1,16 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>簡易画像ビューワ</title>
+        <link rel="stylesheet" href="@routes.Assets.at("stylesheets/viewer.css")">
+    </head>
+    <body>
+        <img id="pict" src="@routes.Assets.at("viewer/1.jpg")">
+        <div id="no" class="no1">No.1</div>
+        <button id="rev_btn" disabled="disabled">←</button>
+        <button id="fwd_btn">→</button>
+        <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.at("javascripts/viewer.js")" type="text/javascript"></script>
+    </body>
+</html>
