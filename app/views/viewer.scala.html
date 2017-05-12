@@ -9,7 +9,7 @@
               <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.22/css/uikit.min.css" />
     </head>
     <body>
-        <img id="pict" src="@routes.Assets.at("viewer/1.jpg")" >
+        <img id="pict" src="">
         <div id="no" class="no1">No.1</div>
         <button id="rev_btn" disabled="disabled">←</button>
         <button id="fwd_btn">→</button>
@@ -22,7 +22,7 @@
         var imgList = [];
         @for((file,i) <- files.zipWithIndex) {
             imgList[@{i}] = document.createElement('img');
-            imgList[@{i}].src = '/assets/viewer/' + @{file};
+            imgList[@{i}].src = '/assets/viewer/' + '@{file}';
         }
     </script>
 </html>

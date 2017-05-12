@@ -5,12 +5,17 @@ function init() {
         type: "GET",
         url: "/files",
         success: function (msg) {
+            if (msg.length === 0) return false;
+            
             var myImg = [];
             var pictNo = 1;
             var myNo = document.getElementById('no');
             var myPict = document.getElementById('pict');
             var revBtn = document.getElementById('rev_btn');
             var fwdBtn = document.getElementById('fwd_btn');
+            
+            // 初期値設定
+            myPict.src = '/assets/viewer/' + msg.files[0];
 
             for (var i = 0; i < msg.files.length; i++) {
                 myImg[i] = document.createElement('img');
