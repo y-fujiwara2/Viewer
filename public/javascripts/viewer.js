@@ -1,6 +1,7 @@
 ﻿window.onload = init;
 
 function init() {
+    // ajax通信後にコールバックとしてすべての処理を行う
     $.ajax({
         type: "GET",
         url: "/files",
