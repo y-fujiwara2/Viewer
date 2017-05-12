@@ -1,16 +1,28 @@
+@(files: List[String])
+
 ﻿<!DOCTYPE html>
 <html lang="ja">
     <head>
         <meta charset="utf-8">
         <title>簡易画像ビューワ</title>
         <link rel="stylesheet" href="@routes.Assets.at("stylesheets/viewer.css")">
+              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.22/css/uikit.min.css" />
     </head>
     <body>
-        <img id="pict" src="@routes.Assets.at("viewer/1.jpg")">
+        <img id="pict" src="@routes.Assets.at("viewer/1.jpg")" >
         <div id="no" class="no1">No.1</div>
         <button id="rev_btn" disabled="disabled">←</button>
         <button id="fwd_btn">→</button>
-        <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.22/js/uikit.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.22/js/uikit-icons.min.js"></script>
         <script src="@routes.Assets.at("javascripts/viewer.js")" type="text/javascript"></script>
     </body>
+    <script>
+        var imgList = [];
+        @for((file,i) <- files.zipWithIndex) {
+            imgList[@{i}] = document.createElement('img');
+            imgList[@{i}].src = '/assets/viewer/' + @{file};
+        }
+    </script>
 </html>
